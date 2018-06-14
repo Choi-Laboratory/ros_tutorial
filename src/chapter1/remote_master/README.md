@@ -8,20 +8,23 @@ hostname -I
 →192.168.11.## と出る。
 
 ●手順
-①端末の環境設定ファイルを開く。
+①通信相手と接続出来ているか確認(**の部分は相手に教えてもらう)
+ping 192.168.11.**
+
+②端末の環境設定ファイルを開く。
 sudo gedit ~/.bashrc
 
-②masterとして自分のIPアドレスを登録
+③masterとして自分のIPアドレスを登録
 export ROS_MASTER_URI=http://192.168.11.##:11311
 
-③自分のIPアドレスを登録
+④自分のIPアドレスを登録
 export ROS_HOSTNAME=192.168.11.##
 
-④.bashrcファイルを閉じる
+⑤.bashrcファイルを閉じる
 
-⑤端末をすべて閉じる
+⑥端末をすべて閉じる
 
-⑥端末を2つ立ち上げ、
+⑦端末を2つ立ち上げ、
 1つ目はroscore
 2つ目はrosrun remote_sub listener.py
 
